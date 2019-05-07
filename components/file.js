@@ -2,7 +2,6 @@
  * 文件管理
  */
 const fs = require('fs');
-const path = require('path');
 
 /**
  * 获取目录下的文件树
@@ -26,13 +25,15 @@ function getDirTree(dir) {
     let tempdir = `${dir}\\${file}`;
     if (isFile(tempdir)) {
       obj.childFiles.push({
-        short: file,
-        full: tempdir
+        short: file, // 文件名
+        full: tempdir // 完整路径
       });
       
     } else {
       // console.log('tempdir: ',tempdir);
       let dirname = getDirName(tempdir);
+      // 在当前文件夹的对象下 childDir 属性(1)，以文件夹名作为key(2)，
+      // (2)的值是该目录下 路径dir、childFiles子文件、childDir子文件夹组成的对象或null
       obj.childDir[dirname] = getDirTree(tempdir);
     }
   });
@@ -59,8 +60,8 @@ function getDirName(dir) {
   return tempdir;
 }
 
-// const components_out = readFile(path.resolve(__dirname, './components_out.json'));
-// console.log('components_out: ', (components_out));
+// const components_out = readFile(path.resolve(__dirname, './components-dir-tree.json'));
+// console.log('components-dir-tree: ', components_out);
 
 // 读取指定目录的文件
 function readFile(dir) {

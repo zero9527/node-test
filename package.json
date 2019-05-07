@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sh": "node components/run-sh.js",
+    "create:comp": "node scripts/generateComponent --path",
     "start": "npm run dev",
     "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +17,11 @@
   "license": "ISC",
   "devDependencies": {
     "console-color-mr": "^2.0.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "csv": "^5.1.1",
+    "inquirer": "^6.3.1"
   }
 }
