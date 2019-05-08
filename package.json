@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "gettreer:i": "node index.js --i",
+    "gettreer:c": "node index.js --c",
     "sh": "node components/run-sh.js",
     "create:comp": "node scripts/generateComponent --path",
     "start": "npm run dev",

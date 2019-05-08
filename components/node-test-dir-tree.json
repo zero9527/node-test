@@ -1,0 +1,118 @@
+{
+	"dir": "D:\\node-test",
+	"childFiles": [
+		{
+			"short": ".gitignore",
+			"full": "D:\\node-test\\.gitignore"
+		},
+		{
+			"short": "index.js",
+			"full": "D:\\node-test\\index.js"
+		},
+		{
+			"short": "package-lock.json",
+			"full": "D:\\node-test\\package-lock.json"
+		},
+		{
+			"short": "package.json",
+			"full": "D:\\node-test\\package.json"
+		},
+		{
+			"short": "README.md",
+			"full": "D:\\node-test\\README.md"
+		}
+	],
+	"childDir": {
+		"components": {
+			"dir": "D:\\node-test\\components",
+			"childFiles": [
+				{
+					"short": "components-dir-tree1.json",
+					"full": "D:\\node-test\\components\\components-dir-tree1.json"
+				},
+				{
+					"short": "file.1.js",
+					"full": "D:\\node-test\\components\\file.1.js"
+				},
+				{
+					"short": "file.js",
+					"full": "D:\\node-test\\components\\file.js"
+				},
+				{
+					"short": "index.js",
+					"full": "D:\\node-test\\components\\index.js"
+				},
+				{
+					"short": "log.js",
+					"full": "D:\\node-test\\components\\log.js"
+				},
+				{
+					"short": "node-test-dir-tree.json",
+					"full": "D:\\node-test\\components\\node-test-dir-tree.json"
+				},
+				{
+					"short": "run-sh.js",
+					"full": "D:\\node-test\\components\\run-sh.js"
+				},
+				{
+					"short": "timeFormat.js",
+					"full": "D:\\node-test\\components\\timeFormat.js"
+				}
+			],
+			"childDir": {
+				"test": {
+					"dir": "D:\\node-test\\components\\test",
+					"childFiles": [],
+					"childDir": {
+						"aa": {
+							"dir": "D:\\node-test\\components\\test\\aa",
+							"childFiles": [
+								{
+									"short": "bb.js",
+									"full": "D:\\node-test\\components\\test\\aa\\bb.js"
+								}
+							],
+							"childDir": {
+								"cc": null
+							}
+						}
+					}
+				}
+			}
+		},
+		"json": {
+			"dir": "D:\\node-test\\json",
+			"childFiles": [
+				{
+					"short": "a.json",
+					"full": "D:\\node-test\\json\\a.json"
+				},
+				{
+					"short": "b.json",
+					"full": "D:\\node-test\\json\\b.json"
+				}
+			],
+			"childDir": {}
+		},
+		"scripts": {
+			"dir": "D:\\node-test\\scripts",
+			"childFiles": [
+				{
+					"short": "generateComponent.js",
+					"full": "D:\\node-test\\scripts\\generateComponent.js"
+				}
+			],
+			"childDir": {}
+		},
+		"sh": {
+			"dir": "D:\\node-test\\sh",
+			"childFiles": [
+				{
+					"short": "sh1.js",
+					"full": "D:\\node-test\\sh\\sh1.js"
+				}
+			],
+			"childDir": {}
+		}
+	}
+}

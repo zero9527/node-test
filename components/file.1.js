@@ -2,24 +2,11 @@
  * 文件管理
  */
 const fs = require('fs');
-// 获取获取目录的类型，过滤i: ignore/包含c: contain
-const type = process.env.getDirTreeType;
-// 正则表达式
-let reg = process.env.getDirTreeReg.replace('[', '').replace(']', '');
-
-// 正则表达式转换
-let modifier = reg.substring(reg.lastIndexOf('/')+1, reg.length); // 修饰符
-reg = reg.substring(1, reg.lastIndexOf('/')); // 截取表达式模型
-reg = new RegExp(reg, modifier); // 生成正则表达式
-
-log('reg: ',reg);
-log('type: ',type);
-
-let firstRun = true; // getDirTree首次执行
 
 /**
  * 获取目录下的文件树
  * @param {读取的路径} dir 
+ * @param {回调函数} callback 
  * @returns 返回 dir目录下的文件树
  */
 function getDirTree(dir) {
@@ -29,18 +16,10 @@ function getDirTree(dir) {
     childDir: {}
   };
   let objStr = JSON.stringify(obj);
-  if (firstRun && isFile(dir)) return console.log(`${dir}: 不是文件夹`.redBG);
+  if (isFile(dir)) return console.log(`${dir}: 不是文件夹`.redBG);
 
   let files = readDir(dir);
-  
-  if (firstRun) {
-    // 根据正则过滤文件、文件夹
-    files = filesFilter(files);
-    // 过滤之后的文件、文件夹列表
-    log('files: ', files);
-  }
-
-  firstRun = false;
+  if (!files.length) console.log(`${dir}: 文件夹为空`.redBG);
 
   // 遍历文件
   files.forEach(file => {
@@ -64,26 +43,11 @@ function getDirTree(dir) {
   return JSON.stringify(obj) === objStr ? null : obj;
 }
 
-// 根据正则过滤文件、文件夹
-function filesFilter(files) {
-  switch (type) {
-    case 'i': // 过滤掉忽略的文件、文件夹
-      files = files.filter(item => !reg.test(item));
-      break;
-    case 'c': // 包含
-      files = files.filter(item => reg.test(item));
-      break;
-    default:
-      break;
-  }
-  return files;
-}
-
 // 读取路径下的文件、文件夹
 function readDir(dir) {
   return fs.readdirSync(dir, (err, files) => {
     if (err) throw err;
-    if (firstRun && !files.length) console.log(`${dir}: 文件夹为空`.redBG);
+    // if (!files.length) console.log(`${dir}: 文件夹为空`.redBG);
     return files;
   })
 }
