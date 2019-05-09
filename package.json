@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "gettreer": "node index.js --i",
     "gettreer:i": "node index.js --i",
     "gettreer:c": "node index.js --c",
     "sh": "node components/run-sh.js",

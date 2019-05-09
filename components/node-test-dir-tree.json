@@ -1,27 +1,6 @@
 {
 	"dir": "D:\\node-test",
-	"childFiles": [
-		{
-			"short": ".gitignore",
-			"full": "D:\\node-test\\.gitignore"
-		},
-		{
-			"short": "index.js",
-			"full": "D:\\node-test\\index.js"
-		},
-		{
-			"short": "package-lock.json",
-			"full": "D:\\node-test\\package-lock.json"
-		},
-		{
-			"short": "package.json",
-			"full": "D:\\node-test\\package.json"
-		},
-		{
-			"short": "README.md",
-			"full": "D:\\node-test\\README.md"
-		}
-	],
+	"childFiles": [],
 	"childDir": {
 		"components": {
 			"dir": "D:\\node-test\\components",
@@ -31,8 +10,12 @@
 					"full": "D:\\node-test\\components\\components-dir-tree1.json"
 				},
 				{
-					"short": "file.1.js",
-					"full": "D:\\node-test\\components\\file.1.js"
+					"short": "file.2.js",
+					"full": "D:\\node-test\\components\\file.2.js"
+				},
+				{
+					"short": "file.bakeup.js",
+					"full": "D:\\node-test\\components\\file.bakeup.js"
 				},
 				{
 					"short": "file.js",
@@ -73,46 +56,21 @@
 								}
 							],
 							"childDir": {
-								"cc": null
-							}
+								"cc": {
+									"dir": "D:\\node-test\\components\\test\\aa\\cc",
+									"childFiles": [],
+									"childDir": {},
+									"output": "D:\\node-test\n└─ components\n    ├─ components-dir-tree1.json\n    ├─ file.2.js\n    ├─ file.bakeup.js\n    ├─ file.js\n    ├─ index.js\n    ├─ log.js\n    ├─ node-test-dir-tree.json\n    ├─ run-sh.js\n    ├─ test\n      └─ aa\n        ├─ bb.js\n        └─ cc\n"
+								}
+							},
+							"output": "D:\\node-test\n└─ components\n    ├─ components-dir-tree1.json\n    ├─ file.2.js\n    ├─ file.bakeup.js\n    ├─ file.js\n    ├─ index.js\n    ├─ log.js\n    ├─ node-test-dir-tree.json\n    ├─ run-sh.js\n    ├─ test\n      └─ aa\n        ├─ bb.js\n        └─ cc\n"
 						}
-					}
+					},
+					"output": "D:\\node-test\n└─ components\n    ├─ components-dir-tree1.json\n    ├─ file.2.js\n    ├─ file.bakeup.js\n    ├─ file.js\n    ├─ index.js\n    ├─ log.js\n    ├─ node-test-dir-tree.json\n    ├─ run-sh.js\n    ├─ test\n      └─ aa\n        ├─ bb.js\n        └─ cc\n"
 				}
-			}
-		},
-		"json": {
-			"dir": "D:\\node-test\\json",
-			"childFiles": [
-				{
-					"short": "a.json",
-					"full": "D:\\node-test\\json\\a.json"
-				},
-				{
-					"short": "b.json",
-					"full": "D:\\node-test\\json\\b.json"
-				}
-			],
-			"childDir": {}
-		},
-		"scripts": {
-			"dir": "D:\\node-test\\scripts",
-			"childFiles": [
-				{
-					"short": "generateComponent.js",
-					"full": "D:\\node-test\\scripts\\generateComponent.js"
-				}
-			],
-			"childDir": {}
-		},
-		"sh": {
-			"dir": "D:\\node-test\\sh",
-			"childFiles": [
-				{
-					"short": "sh1.js",
-					"full": "D:\\node-test\\sh\\sh1.js"
-				}
-			],
-			"childDir": {}
+			},
+			"output": "D:\\node-test\n└─ components\n    ├─ components-dir-tree1.json\n    ├─ file.2.js\n    ├─ file.bakeup.js\n    ├─ file.js\n    ├─ index.js\n    ├─ log.js\n    ├─ node-test-dir-tree.json\n    ├─ run-sh.js\n    ├─ test\n      └─ aa\n        ├─ bb.js\n        └─ cc\n    └─ timeFormat.js\n"
 		}
-	}
+	},
+	"output": "D:\\node-test\n└─ components\n    ├─ components-dir-tree1.json\n    ├─ file.2.js\n    ├─ file.bakeup.js\n    ├─ file.js\n    ├─ index.js\n    ├─ log.js\n    ├─ node-test-dir-tree.json\n    ├─ run-sh.js\n    ├─ test\n      └─ aa\n        ├─ bb.js\n        └─ cc\n    └─ timeFormat.js\n"
 }

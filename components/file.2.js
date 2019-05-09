@@ -18,7 +18,7 @@ reg = new RegExp(reg, modifier); // 生成正则表达式
 // log('type: ',type);
 
 let firstRun = true; // getDirTree首次执行
-
+let output = ''; // 生成目录结构字符串
 /**
  * 获取目录下的文件树
  * @param {读取的路径} dir 
@@ -36,6 +36,7 @@ function getDirTree(dir) {
   let files = readDir(dir);
   
   if (firstRun) {
+    output=`${dir}\n`;
     // 根据正则过滤文件、文件夹
     files = filesFilter(files);
     // 过滤之后的文件、文件夹列表
@@ -45,8 +46,19 @@ function getDirTree(dir) {
   firstRun = false;
 
   // 遍历文件
-  files.forEach(file => {
+  files.forEach((file, index) => {
     let tempdir = `${dir}\\${file}`;
+    let dirname = getDirName(tempdir);
+    // dir深度
+    let dirDeep = new Array(tempdir.split('\\').length - 2).fill(0);
+    
+    // 组装目录结构
+    dirDeep = dirDeep.reduce((acc,cur) => 
+      acc = (dirDeep.length > 1 ? '  ' : '') + acc, 
+      index === files.length - 1 ? '└─ ' : '├─ '
+    );
+    
+    output += `${dirDeep}${dirname}\n`;
 
     if (isFile(tempdir)) {
       obj.childFiles.push({
@@ -55,14 +67,12 @@ function getDirTree(dir) {
       });
       
     } else {
-      // console.log('tempdir: ',tempdir);
-      let dirname = getDirName(tempdir);
-      
       // 在当前文件夹的对象下 childDir 属性(1)，以文件夹名作为key(2)，
       // (2)的值是该目录下 路径dir、childFiles子文件、childDir子文件夹组成的对象或null
       obj.childDir[dirname] = getDirTree(tempdir);
     }
   });
+  obj.output = output;
   return JSON.stringify(obj) === objStr ? null : obj;
 }
 

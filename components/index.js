@@ -21,22 +21,19 @@ function getDirTreeInit() {
   // log('program.i: ', program.i);
   // log('program.c: ', program.c);
 
-  // 接受命令行参数 npm run gettreer:i ["/node_modules|.git/"]
-  let reg = program.i || program.c || '/node_modules|.git/i';
+  // 接受命令行参数 npm run gettreer:i ["/node_modules|.git/i"]
+  let reg = (typeof program.i === 'string' && program.i) 
+    || (typeof program.c === 'string' && program.c)  
+    || '[/node_modules|.git/i]';
   process.env.getDirTreeType = program.c ? 'c' : 'i'; // 忽略过滤ignore
   process.env.getDirTreeReg = reg; // 正则表达式
 
-  // 默认过滤掉 'node_modules|.git'
-  // 设置类型和过滤正则表达式
-  // process.env.getDirTreeType = 'i'; // 忽略过滤ignore
-  // process.env.getDirTreeReg = '/node_modules|.git/i'; // 正则表达式
-  // process.env.getDirTreeType = 'c'; // 包含过滤contain
-  // process.env.getDirTreeReg = 'components'; // 正则表达式
-
-  const { getDirTree, getDirName }  = require('./file.js');
+  const { getDirTree, getDirName } = '' 
+    ? require('./file.js') // 上个版本
+    : require('./file.2.js'); // 本次改进版本
 
   let treeObj = getDirTree(componentDir);
-  // console.log('treeObj: ',treeObj);
+  log('treeObj: \n',treeObj.output);
 
   if (treeObj) {
     let outdir = `${__dirname}\\${getDirName(componentDir)}-dir-tree.json`;
